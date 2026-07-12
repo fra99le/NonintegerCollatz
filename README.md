@@ -1,1 +1,31 @@
 # NonintegerCollatz
+
+This code is for exploring Collatz for non-integers.
+
+## Getting Started
+
+### Dependancies
+
+This code relies on The GNU Multiple Precision Arithmetic Library for
+calculation and Gnu Plot for making graphs.
+Packages for libgmp and gnuplot should exist for most Linux distributions and
+are available via [macports](https://www.macports.org) on macOS.
+
+In [Debian](https://www.debian.org/) Linux:
+```text
+$ sudo apt-get install libgmp10 gnuplot
+```
+
+In macOS using [macports](https://www.macports.org):
+```text
+$ sudo port install gmp gnuplot
+```
+
+### Running
+
+```
+$ c++ -I/opt/local/include -L/opt/local/lib -lgmp -lgmpxx collatz_w.cpp -o collatz_w 
+$ ./collatz_w 33
+$ ./plot_w.gplot
+$ ./plot_dbl.gplot
+```
