@@ -7,8 +7,8 @@ This code is for exploring Collatz for non-integers.
 ### Dependancies
 
 This code relies on The GNU Multiple Precision Arithmetic Library for
-calculation and Gnu Plot for making graphs.
-Packages for libgmp and gnuplot should exist for most Linux distributions and
+calculation and GNU Plot for making graphs.
+Packages for [libgmp](https://gmplib.org) and [gnuplot](http://www.gnuplot.info) should exist for most Linux distributions and
 are available via [macports](https://www.macports.org) on macOS.
 
 In [Debian](https://www.debian.org/) Linux:
