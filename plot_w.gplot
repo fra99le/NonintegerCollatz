@@ -1,0 +1,158 @@
+#!/usr/bin/env gnuplot
+
+set terminal png size 1600,1000
+set encoding utf8
+#set title ""
+
+orange = '#F5B63F'
+blue = '#008ebc'
+purple = '#B300BD'
+
+
+set grid x
+set grid y
+set mytics 5
+set mxtics 5
+
+set term wxt
+set logscale x
+set xrange [0:1.1e7]
+set yrange [-20000:20000]
+#plot 'divfree_data_ints.txt' using 1:($4/$5) with points, \
+#     'divfree_data.txt' using 1:($4/$5) with dots;
+#pause -1
+
+set term png
+set terminal png size 600,400
+set xlabel 'w'
+set ylabel 'x_0'
+
+set key right bottom box
+
+set xrange [*:1e52]
+set output 'divfree_x_vs_w_only.png'
+plot 'divfree_w_sampled.txt' using 1:($4/$5) with dots title 'Sampled W';
+
+set terminal png size 600,400
+set key right bottom box
+set logscale x
+set logscale y
+set mytics 10
+set xrange [1:1e11]
+set yrange [1:1e17]
+set output 'sampled_w_vs_x.png'
+set xlabel 'x_0'
+set ylabel 'w'
+plot 'divfree_w_sampled.txt' using ($4/$5):1 \
+        linecolor rgb '#F5B63F' \
+        with dots title 'Sampled w', \
+     'divfree_x_sampled.txt' using ($4/$5):1 \
+        linecolor rgb '#008ebc' \
+        with dots title 'Integer x_0';
+
+set term pdf size 5in,3in
+set output "sampled_w_vs_x.pdf"
+replot
+
+set terminal png size 600,400
+set key left top box
+unset logscale x
+unset logscale y
+set xrange [1:5e17]
+set yrange [1:*]
+#set output 'sampled_steps_vs_x.png'
+set xlabel 'x_0'
+set ylabel '"steps to 1" (m+d)'
+#plot 'divfree_w_sampled.txt' using ($4/$5):($2+$3) \
+        linecolor rgb '#F5B63F' \
+        with dots title 'Sampled w', \
+     'divfree_x_sampled.txt' using ($4/$5):($2+$3) \
+        linecolor rgb '#008ebc' \
+        with dots title 'Sampled x';
+
+#set term pdf size 5in,3in
+#set output "sampled_steps_vs_x.pdf"
+#replot
+
+set terminal png size 600,400
+set key right bottom box
+set logscale x
+set logscale y
+set mytics 10
+set xrange [1:100000]
+set yrange [1:100000]
+set output 'enumerated_w_vs_x.png'
+set xlabel 'x_0'
+set ylabel 'w'
+plot 'divfree_w_enumerated.txt' using ($4/$5):1 \
+        linecolor rgb '#F5B63F' \
+        with dots title 'Enumerated w', \
+     'divfree_x_enumerated.txt' using ($4/$5):1 \
+        linecolor rgb '#008ebc' \
+        with points title 'Integer x_0';
+
+set term pdf size 5in,3in
+set output "enumerated_w_vs_x.pdf"
+replot
+
+set terminal png size 600,400
+set key right bottom box
+unset logscale x
+set logscale y
+set mytics 10
+set xrange [1:5000]
+set yrange [1:300]
+set output 'enumerated_steps_vs_x.png'
+set xlabel 'x_0'
+set ylabel '"steps to 1" (m+d)'
+plot 'divfree_w_enumerated.txt' using ($4/$5):($2+$3) \
+        linecolor rgb '#F5B63F' \
+        with dots title 'Enumerated w', \
+     'divfree_x_enumerated.txt' using ($4/$5):($2+$3) \
+        linecolor rgb '#008ebc' \
+        with points title 'Integer x_0';
+
+set term pdf size 5in,3in
+set output "enumerated_steps_vs_x.pdf"
+replot
+
+set terminal png size 600,400
+set key right bottom box
+unset logscale x
+unset logscale y
+set mytics 5
+set xrange [1:25]
+set yrange [0:25]
+set output 'enumerated_steps_vs_x_2.png'
+set xlabel 'x_0'
+set ylabel '"steps to 1" (m+d)'
+plot 'divfree_w_enumerated.txt' using ($4/$5):($2+$3) \
+        linecolor rgb '#F5B63F' \
+        with dots title 'Enumerated w', \
+     'divfree_x_enumerated.txt' using ($4/$5):($2+$3) \
+        linecolor rgb '#008ebc' \
+        with points title 'Integer x_0';
+
+set term pdf size 5in,3in
+set output "enumerated_steps_vs_x_2.pdf"
+replot
+
+set terminal png size 600,400
+set key right bottom box
+set logscale x
+unset logscale y
+set xrange [1:1e5]
+set yrange [1:*]
+#set output 'enumerated_steps_vs_w.png'
+set xlabel 'w'
+set ylabel '"steps to 1" (m+d)'
+#plot 'divfree_w_enumerated.txt' using 1:($2+$3) \
+        linecolor rgb '#F5B63F' \
+        with dots title 'Enumerated w', \
+     'divfree_x_enumerated.txt' using 1:($2+$3) \
+        linecolor rgb '#008ebc' \
+        with points title 'Integer x_0';
+
+#set term pdf size 5in,3in
+#set output "enumerated_steps_vs_w.pdf"
+#replot
