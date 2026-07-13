@@ -367,7 +367,7 @@ int write_divfree_table_html(const std::string filename, const std::string png, 
         mpz_mul_ui(x_val, x_val, 3);    // 3*x_i
         mpz_add(x_val, x_val, pow2);    // add lob(x_i);
         ofs << " </td><td style=\"padding: 0px; text-align: right;\"> " << lobPos;
-        ofs << " </td><td style=\"padding: 0px; text-align: right;\"> " << " 2<sub>" << lobPos << "</sub> </td> ";
+        ofs << " </td><td style=\"padding: 0px; text-align: right;\"> " << " 2<sup>" << lobPos << "</sup> </td> ";
         ofs << "</tr>" << std::endl;
         ofs << "<tr>" << std::endl;
     }
