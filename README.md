@@ -1,6 +1,6 @@
 # NonintegerCollatz
 
-This code is for exploring Collatz for non-integers.
+This code is part of a [project](#TBD) exploring Collatz for non-integers.
 
 ## Getting Started
 
