@@ -1,3 +1,9 @@
+/*
+ * collatz_w.cpp
+ * NonintegerCollatz: Collatz for non-integers
+ *
+ * Copyright (c) 2026 Bryan Franklin. All rights reserved.
+ */
 #include <fstream>
 #include <iostream>
 #include <map>
