@@ -13,7 +13,7 @@ are available via [macports](https://www.macports.org) on macOS.
 
 In [Debian](https://www.debian.org/) Linux:
 ```text
-$ sudo apt-get install libgmp10 gnuplot
+$ sudo apt-get install libgmp10-dev gnuplot
 ```
 
 In macOS using [macports](https://www.macports.org):
