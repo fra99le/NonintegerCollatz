@@ -13,7 +13,7 @@
 #include "collatz.h"
 #include "collatz_gmp.h"
 
-// clear; c++ -I/opt/local/include -L/opt/local/lib -lgmp -lgmpxx collatz_w.cpp -o collatz_w && time ./collatz_w 33 && cat divfree_table.tex && time ./plot_w.gplot && time ./plot_dbl.gplot
+// clear; c++ -I/opt/local/include -L/opt/local/lib collatz_w.cpp -lgmp -lgmpxx -o collatz_w && time ./collatz_w 33 && cat divfree_table.tex && time ./plot_w.gplot && time ./plot_dbl.gplot
 
 typedef struct bit_info {
     int r, g, b, a;

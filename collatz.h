@@ -6,6 +6,9 @@
  */
 #ifndef COLLATZ_H
 #define COLLATZ_H
+#include <unordered_map>
+#include <math.h>
+#include <string.h>
 
 //#define COLLATZ_TYPE unsigned long long int
 #define COLLATZ_TYPE long long int
