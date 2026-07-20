@@ -6,7 +6,10 @@
  */
 #ifndef COLLATZ_H
 #define COLLATZ_H
+#include <fstream>
+#include <iomanip>
 #include <unordered_map>
+#include <vector>
 #include <math.h>
 #include <string.h>
 

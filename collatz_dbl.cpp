@@ -1,5 +1,6 @@
 //#include <gmp.h>
 #include <fstream>
+#include <iomanip>
 #include <iostream>
 #include <map>
 #include <stdio.h>
@@ -16,7 +17,7 @@
 
 typedef union {
     long double x;
-    unsigned char c[];
+    unsigned char c[1];
     unsigned long long ll;
 } ld2char_t;
 
