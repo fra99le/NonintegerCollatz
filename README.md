@@ -1,6 +1,6 @@
 # NonintegerCollatz
 
-This code is part of a [project](https://blog.doingsciencetostuff.com/2026/07/13/extending-collatz-to-non-integers/) exploring Collatz for non-integers.
+This code is part of a [project](https://blog.doingsciencetostuff.com/2026/07/13/extending-collatz-to-non-integers/) [exploring](#TBD) Collatz for non-integers.
 
 ## Getting Started
 
@@ -21,7 +21,7 @@ In macOS using [macports](https://www.macports.org):
 $ sudo port install gmp gnuplot
 ```
 
-### Running
+### Compiling and Running
 
 ```
 $ git clone https://github.com/fra99le/NonintegerCollatz.git
@@ -29,4 +29,7 @@ $ cd NonintegerCollatz
 $ c++ -I/opt/local/include -L/opt/local/lib collatz_w.cpp -lgmp -lgmpxx -o collatz_w 
 $ ./collatz_w 33
 $ ./plot_w.gplot
+$ c++ -I/opt/local/include -L/opt/local/lib collatz_dbl.cpp -lgmp -lgmpxx -o collatz_dbl 
+$ ./collatz_dbl
+$ ./plot_dbl.gplot
 ```
