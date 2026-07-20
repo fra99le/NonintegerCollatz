@@ -1,4 +1,9 @@
-//#include <gmp.h>
+/*
+ * collatz_dbl.cpp
+ * NonintegerCollatz: Collatz for non-integers
+ *
+ * Copyright (c) 2026 Bryan Franklin. All rights reserved.
+ */
 #include <fstream>
 #include <iomanip>
 #include <iostream>

@@ -1,4 +1,11 @@
 #!/usr/bin/env gnuplot
+#
+# plot_dbl.gplot
+# NonintegerCollatz: Collatz for non-integers
+#
+# Copyright (c) 2026 Bryan Franklin. All rights reserved.
+#
+
 
 set terminal png size 1600,1000
 set encoding utf8
