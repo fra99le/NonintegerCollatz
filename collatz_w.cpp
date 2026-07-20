@@ -20,7 +20,7 @@ typedef struct bit_info {
 } bit_info_t;
 
 
-int write_divfree_table(const std::string filename, const std::string png, const long x_0) {
+int write_divfree_table(const std::string filename, const long x_0) {
 
     if( (x_0%2) == 0 ) {
         std::cerr << "x_0 must be odd.\n";
@@ -213,7 +213,7 @@ int write_divfree_table(const std::string filename, const std::string png, const
 }
 
 
-int write_divfree_table_html(const std::string filename, const std::string png, const long x_0) {
+int write_divfree_table_html(const std::string filename, const long x_0) {
 
     if( (x_0%2) == 0 ) {
         std::cerr << "x_0 must be odd.\n";
@@ -583,8 +583,8 @@ int main(int argc, char **argv) {
     long long argv1 = atol(argv[1]);
     mpz_t gmp_arg;
     mpz_init(gmp_arg);
-    write_divfree_table("divfree_table.tex", "divfree_table.png", argv1);
-    write_divfree_table_html("MathML/01_divfree_table.html", "MathML/divfree_table.png", argv1);
+    write_divfree_table("divfree_table.tex", argv1);
+    write_divfree_table_html("divfree_table.html", argv1);
 
     std::fstream ds;
     ds.open("divfree_w_sampled.txt", std::ofstream::out | std::ofstream::trunc);
