@@ -260,9 +260,12 @@ int write_divfree_table_html(const std::string filename, const long x_0) {
             ++column;
         }
     }
-    firstRow += " </td><td style=\"padding: 0px; text-align: right;\"> x<sub>i</sub> </td>";
-    firstRow += "<td style=\"padding: 0px; text-align: right;\"> v<sub>i</sub> </td>";
-    firstRow += "<td style=\"padding: 0px; text-align: right;\"> lob(x<sub>i</sub>) </td>\n</tr>\n";
+    firstRow += " </td><td style=\"padding: 0px; text-align: right;\"> ";
+    firstRow += "x<sub>i</sub> </td>";
+    firstRow += "<td style=\"padding: 0px; text-align: right;\"> ";
+    firstRow += "v<sub>i</sub> </td>";
+    firstRow += "<td style=\"padding: 0px; text-align: right;\"> ";
+    firstRow += "lob(x<sub>i</sub>) </td>\n</tr>\n";
 
 
     // create image to buffer bit histories
