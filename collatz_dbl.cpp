@@ -316,13 +316,15 @@ void sample_dataset_double(std::ostream &fout, int max_bits, int max_exp, int n_
             w += lob;   // add lob to w
 
             // add lob position to v
-            int lob_pos = round(log(lob)/log(2.0));
-            v.push_back(lob_pos);
+            int pos = lob_pos(x_i);
+            v.push_back(pos);
         }
+        int pos = lob_pos(x_i);
+        v.push_back(pos);
         w += lob_value(x_i);    // add final lob (i.e. 2^d)
         d = 0;
         if( !v.empty() ) {
-            d = v.back()-v[0];
+            d = v.back();
         }
         m = v.size()-1;
 
