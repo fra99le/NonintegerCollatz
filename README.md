@@ -26,10 +26,10 @@ $ sudo port install gmp gnuplot
 ```
 $ git clone https://github.com/fra99le/NonintegerCollatz.git
 $ cd NonintegerCollatz
-$ c++ -I/opt/local/include -L/opt/local/lib collatz_w.cpp -lgmp -lgmpxx -o collatz_w 
+$ c++ -O2 -I/opt/local/include -L/opt/local/lib collatz_w.cpp -lgmp -lgmpxx -o collatz_w 
 $ ./collatz_w 33
 $ ./plot_w.gplot
-$ c++ -I/opt/local/include -L/opt/local/lib collatz_dbl.cpp -lgmp -lgmpxx -o collatz_dbl 
+$ c++ -O2 -I/opt/local/include -L/opt/local/lib collatz_dbl.cpp -lgmp -lgmpxx -o collatz_dbl 
 $ ./collatz_dbl
 $ ./plot_dbl.gplot
 ```

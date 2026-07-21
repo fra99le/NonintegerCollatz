@@ -17,7 +17,7 @@
 // see: https://en.wikipedia.org/wiki/Extended_precision
 
 // to run:
-// clear; CXXFLAGS=-I/opt/local/include\ -L/opt/local/lib\ -lgmp\ -lgmpxx make collatz_dbl && time ./collatz_dbl && time ./plot_dbl.gplot
+// clear; CXXFLAGS=-O3\ -I/opt/local/include\ -L/opt/local/lib\ -lgmp\ -lgmpxx make collatz_dbl && time ./collatz_dbl && time ./plot_dbl.gplot
 
 
 typedef union {
