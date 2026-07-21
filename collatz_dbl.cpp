@@ -243,23 +243,20 @@ void enumerate_dataset_double(std::ostream &fout, int max_x, double step_size) {
         if( x_dbl == floor(x_dbl) )
             continue;
 
-        // perform collatz operations to get m, d, and w.
-        long double w = 0;
+        // perform collatz operations to get m, d.
         while( x_dbl != 1.0 ) {
             long double lob = lob_value(x_dbl);
-            if( lob >= 2 ) {
-                ++d;
-                x_dbl = (x_dbl)/2;
-            } else {
+            if( lob <= 1 ) {
                 ++m;
                 x_dbl = 3*(x_dbl) + lob;
+            } else {
+                ++d;
+                x_dbl = (x_dbl)/2;
             }
-
-            w += lob;
         }
 
         fout << std::setprecision(21)
-            << w << " "
+            << -1.0 << " "
             << d << " "
             << m << " "
             << x_0 << " "
