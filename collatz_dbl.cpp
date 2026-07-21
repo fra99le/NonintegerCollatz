@@ -319,6 +319,7 @@ void sample_dataset_double(std::ostream &fout, int max_bits, int max_exp, int n_
     }
     std::cout << "total samples: " << samples.size() << std::endl;
 
+    // process samples
     for(long double x_sample : samples) {
         long m=0, d=0;
 
@@ -327,7 +328,7 @@ void sample_dataset_double(std::ostream &fout, int max_bits, int max_exp, int n_
         x_0 = x_sample;
         long double x_i = x_0;
 
-        // perform collatz operations to get m, d, and w.
+        // perform division-free collatz operations to get m, d, and w.
         long double w = 0;
         std::vector<int> v;
         v.clear();
