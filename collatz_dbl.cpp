@@ -152,9 +152,9 @@ int lob_pos(long double x) {
     
     // find lob bit
     int pos = -1;
-    for(int i=0; i<113 && pos<0; ++i) {
+    for(int i=0; i<80 && pos<0; ++i) {
         if( get_bit(ld.c, sizeof(ld)*8, i) == 1 ) {
-            pos = i;
+            pos = exponent(x)-(63-i);
             break;
         }
     }
@@ -166,41 +166,18 @@ int gap(long double x) {
     // find lob bit
     int pos = lob_pos(x);
     // compute gap
-    int gap = 63-pos;
+    int gap = exponent(x)-lob_pos(x);
 
     return gap;
 }
 
 
 long double lob_value(long double x) {
-    ld2char_t ld;
-    memset(&ld, '\0', sizeof(ld));
-    ld.x = x;
     
     // find lob bit
     int pos = lob_pos(x);
+    long double ret = powl(2.0, pos);
 
-    // compute number of bits to shift exponent
-    int delta_exp = 63-pos;
-
-    // extract exponent
-    int expon = exponent(x);
-
-    // update exponent
-    //std::cout << "delta_exp: " << delta_exp << std::endl;
-    expon -= delta_exp;
-
-    // check that result is valid
-    if( expon > 16383 || expon < -16383 )
-        return -1.0;
-
-    // place exponent back
-    ld.x = set_exponent(1, expon);
-    set_bit(ld.c, 63, 64, 1);
-
-    // convert back to long double
-    long double ret = ld.x;
-    
     return ret;
 }
 
